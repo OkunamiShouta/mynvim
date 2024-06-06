@@ -38,3 +38,4 @@ sudo apt install -y nodejs npm
 ```
 
 # tmux install and setting
+
