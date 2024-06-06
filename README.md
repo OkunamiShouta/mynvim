@@ -44,3 +44,5 @@ sudo apt autoremove -y
 
 # tmux install and setting
 
+
+# pyright install
