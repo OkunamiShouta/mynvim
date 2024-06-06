@@ -21,6 +21,6 @@ pyenv install 3.8.19
 
 pyenv global 3.8.19
 
-
+s
 
 ```
