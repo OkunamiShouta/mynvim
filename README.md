@@ -35,6 +35,11 @@ sudo install lazygit /usr/local/bin
 # npm node.js install
 ```bash
 sudo apt install -y nodejs npm
+sudo npm install n -g
+sudo n stable
+sudo apt purge -y nodejs npm
+sudo apt autoremove -y
+
 ```
 
 # tmux install and setting
