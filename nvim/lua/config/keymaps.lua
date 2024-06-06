@@ -16,3 +16,4 @@ LazyVim.safe_keymap_set({ "n", "i", "v", "t" }, "<A-d>", "<Right>")
 
 LazyVim.safe_keymap_set({ "n", "i", "v", "t" }, "<A-q>", "<esc>")
 LazyVim.safe_keymap_set({ "n", "i", "v", "t" }, "<A-t>", "<cmd>q<CR>")
+LazyVim.safe_keymap_set({ "n", "i", "v", "t" }, "<A-e>", "<esc>o")

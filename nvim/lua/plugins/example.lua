@@ -149,6 +149,7 @@ return {
         "markdown",
         "markdown_inline",
         "python",
+        "julia",
         "query",
         "regex",
         "tsx",
