@@ -1,0 +1,61 @@
+format = """
+[░▒▓](#a3aed2)\
+[  ](bg:#a3aed2 fg:#090c0c)\
+[](bg:#769ff0 fg:#a3aed2)\
+$directory\
+[](fg:#769ff0 bg:#584fd6)\
+$git_branch\
+$git_status\
+[](fg:#584fd6 bg:#394260)\
+$conda\
+[](fg:#394260 bg:#212736)\
+$rust\
+$python\
+$c\
+[](fg:#212736 bg:#1d2230)\
+
+[ ](fg:#1d2230)\
+\n$character"""
+
+[directory]
+style = "fg:#e3e5e5 bg:#769ff0"
+format = "[ $path ]($style)"
+truncation_length = 3
+truncation_symbol = "…/"
+
+[directory.substitutions]
+"Documents" = "󰈙 "
+"Downloads" = " "
+"Music" = " "
+"Pictures" = " "
+
+[git_branch]
+symbol = ""
+style = "bg:#584fd6"
+format = '[[ $symbol $branch ](fg:#A294C8 bg:#584fd6)]($style)'
+
+[git_status]
+style = "bg:#584fd6"
+format = '[[($all_status$ahead_behind )](fg:#A294C8 bg:#584fd6)]($style)'
+
+[conda]
+style = "#394260"
+format = '[[ $symbol( $environment) ](fg:#769ff0 bg:#394260)]($style)'
+
+[rust]
+symbol = ""
+style = "bg:#212736"
+format = '[[ $symbol ($version) ](fg:#a0a9cb bg:#212736)]($style)'
+
+
+[python]
+symbol = ""
+style = "bg:#212736"
+format = '[[ $symbol ($version) ](fg:#a0a9cb bg:#212736)]($style)'
+
+[c]
+symbol = " "
+style = "bg:#212736"
+format = '[[ $symbol ($version) ](fg:#a0a9cb bg:#212736)]($style)'
+
+
