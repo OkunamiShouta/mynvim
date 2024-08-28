@@ -11,13 +11,19 @@
 -- * override the configuration of LazyVim plugins
 return {
   -- add gruvbox
-  { "ellisonleao/gruvbox.nvim" },
+  {
+  "catppuccin/nvim",
+  lazy = false,
+  name="catppuccin",
+  priority = 1000,
+  opts = {},
+  },
 
   -- Configure LazyVim to load gruvbox
   {
     "LazyVim/LazyVim",
     opts = {
-      colorscheme = "gruvbox",
+      colorscheme = "catppuccin-mocha",
     },
   },
 
@@ -278,4 +284,5 @@ return {
   {
     "github/copilot.vim",
   },
+  
 }
