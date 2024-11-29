@@ -1,24 +1,27 @@
--- Keymaps are automatically loaded on the VeryLazy event
--- Default keymaps that are always set: https://github.com/LazyVim/LazyVim/blob/main/lua/lazyvim/config/keymaps.lua
--- Add any additional keymaps here
-vim.api.nvim_set_keymap("i", "<C-c>", "<ESC>", { noremap = true, silent = true })
 
-LazyVim.safe_keymap_set("i", "<C-j>", 'copilot#Accept("\\<CR>")', {
-  expr = true,
-  replace_keycodes = false,
-})
-vim.g.copilot_no_tab_map = true
+-- キーマップ用の共通オプション
+local opts = { noremap = true, silent = true }
 
-LazyVim.safe_keymap_set({ "n", "i", "v", "t" }, "<A-w>", "<Up>")
-LazyVim.safe_keymap_set({ "n", "i", "v", "t" }, "<A-s>", "<Down>")
-LazyVim.safe_keymap_set({ "n", "i", "v", "t" }, "<A-a>", "<Left>")
-LazyVim.safe_keymap_set({ "n", "i", "v", "t" }, "<A-d>", "<Right>")
+-- Alt+e でファイルエクスプローラーをトグル
+vim.keymap.set("n", "<A-e>", ":Neotree toggle<CR>", opts)
 
-LazyVim.safe_keymap_set({ "n", "i", "v", "t" }, "<A-q>", "<esc>")
-LazyVim.safe_keymap_set({ "n", "i", "v", "t" }, "<A-t>", "<cmd>q<CR>")
-LazyVim.safe_keymap_set({ "n", "i", "v", "t" }, "<A-e>", "<esc>o")
+-- Alt+w, Alt+s, Alt+a, Alt+d で上下左右に移動
+vim.keymap.set("n", "<A-w>", "k", opts) -- 上
+vim.keymap.set("n", "<A-s>", "j", opts) -- 下
+vim.keymap.set("n", "<A-a>", "h", opts) -- 左
+vim.keymap.set("n", "<A-d>", "l", opts) -- 右
 
-LazyVim.safe_keymap_set({ "n", "i" }, "<A-p>", "<Esc><cmd>bp<CR>")
+vim.keymap.set("v", "<A-w>", "k", opts) -- 上 (ビジュアルモード)
+vim.keymap.set("v", "<A-s>", "j", opts) -- 下
+vim.keymap.set("v", "<A-a>", "h", opts) -- 左
+vim.keymap.set("v", "<A-d>", "l", opts) -- 右
 
-LazyVim.safe_keymap_set({ "n", "i" }, "<A-]>", "<Esc><C-w>l")
-LazyVim.safe_keymap_set({ "n", "i" }, "<A-[>", "<Esc><C-w>h")
+vim.keymap.set("i", "<A-w>", "<Up>", opts)    -- 上 (挿入モード)
+vim.keymap.set("i", "<A-s>", "<Down>", opts)  -- 下
+vim.keymap.set("i", "<A-a>", "<Left>", opts)  -- 左
+vim.keymap.set("i", "<A-d>", "<Right>", opts) -- 右
+
+
+-- jjをEscキーにマッピング（挿入モード）
+vim.keymap.set({"i","n","v"}, "jj", "<Esc>", opts)
+vim.keymap.set({"i","n","v"}, "<A-q>", "<cmd>q<CR>", opts)
